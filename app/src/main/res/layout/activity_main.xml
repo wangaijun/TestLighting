@@ -4,27 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btnPrintAll"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="显示全部" />
 
     <Button
         android:id="@+id/btnPrintQuestion"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="显示问题" />
 
     <Button
         android:id="@+id/btnUseWordsAnswerQuestion"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="文字答题练习" />
 
     <Button
-        android:id="@+id/btnPrintAll"
+        android:id="@+id/btnUseNumberAnswerQuestion"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="符号答题练习" />
+
+    <Button
+            android:id="@+id/btnTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="符号答题练习" />
 
 
 </LinearLayout>
