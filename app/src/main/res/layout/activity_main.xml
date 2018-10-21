@@ -35,7 +35,7 @@
             android:id="@+id/btnTest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="符号答题练习" />
+            android:text="测试" />
 
 
 </LinearLayout>
