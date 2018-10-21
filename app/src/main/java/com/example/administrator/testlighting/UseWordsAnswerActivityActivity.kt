@@ -3,6 +3,7 @@ package com.example.administrator.testlighting
 import android.app.Activity
 import android.os.Bundle
 import android.text.Editable
+import android.view.Gravity
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_use_words_answer_activity.*
 
@@ -95,7 +96,9 @@ open class UseWordsAnswerActivityActivity : Activity() {
     open fun getAnswer(s: Editable?) = s.toString()
 
     private fun toast(s: String) {
-        Toast.makeText(this,s,Toast.LENGTH_SHORT).show()
+        val toast = Toast.makeText(this, s, Toast.LENGTH_SHORT)
+        toast.setGravity(Gravity.CENTER,0,0)
+        toast.show()
     }
 
     open fun printQuestions(){
