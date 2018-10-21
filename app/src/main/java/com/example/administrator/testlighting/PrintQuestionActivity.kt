@@ -15,7 +15,7 @@ class PrintQuestionActivity : Activity() {
 
     private fun printQuestion(map: Map<String, String>) {
         map.forEach { t, u ->
-            tv.append("$t\n")
+            tv.append("$t\n\n")
         }
     }
 }
