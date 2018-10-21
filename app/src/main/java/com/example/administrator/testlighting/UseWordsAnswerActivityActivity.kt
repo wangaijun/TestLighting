@@ -6,7 +6,7 @@ import android.text.Editable
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_use_words_answer_activity.*
 
-class UseWordsAnswerActivityActivity : Activity() {
+open class UseWordsAnswerActivityActivity : Activity() {
     val us = mutableListOf<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +19,7 @@ class UseWordsAnswerActivityActivity : Activity() {
     private fun checkRight() {
         etAnswer0.addTextChangedListener(object : AbstractTextWatch(){
             override fun afterTextChanged(s: Editable?) {
-                val input = s.toString()
+                val input = getAnswer(s)
                 when (input) {
                     us[0] -> toast("答对了")
                 }
@@ -27,7 +27,7 @@ class UseWordsAnswerActivityActivity : Activity() {
         })
         etAnswer1.addTextChangedListener(object : AbstractTextWatch(){
             override fun afterTextChanged(s: Editable?) {
-                val input = s.toString()
+                val input = getAnswer(s)
                 when (input) {
                     us[1] -> toast("答对了")
                 }
@@ -35,7 +35,7 @@ class UseWordsAnswerActivityActivity : Activity() {
         })
         etAnswer2.addTextChangedListener(object : AbstractTextWatch(){
             override fun afterTextChanged(s: Editable?) {
-                val input = s.toString()
+                val input = getAnswer(s)
                 when (input) {
                     us[2] -> toast("答对了")
                 }
@@ -43,7 +43,7 @@ class UseWordsAnswerActivityActivity : Activity() {
         })
         etAnswer3.addTextChangedListener(object : AbstractTextWatch(){
             override fun afterTextChanged(s: Editable?) {
-                val input = s.toString()
+                val input = getAnswer(s)
                 when (input) {
                     us[3] -> toast("答对了")
                 }
@@ -51,7 +51,7 @@ class UseWordsAnswerActivityActivity : Activity() {
         })
         etAnswer4.addTextChangedListener(object : AbstractTextWatch(){
             override fun afterTextChanged(s: Editable?) {
-                val input = s.toString()
+                val input = getAnswer(s)
                 when (input) {
                     us[4] -> toast("答对了")
                 }
@@ -59,7 +59,7 @@ class UseWordsAnswerActivityActivity : Activity() {
         })
         etAnswer5.addTextChangedListener(object : AbstractTextWatch(){
             override fun afterTextChanged(s: Editable?) {
-                val input = s.toString()
+                val input = getAnswer(s)
                 when (input) {
                     us[5] -> toast("答对了")
                 }
@@ -67,7 +67,7 @@ class UseWordsAnswerActivityActivity : Activity() {
         })
         etAnswer6.addTextChangedListener(object : AbstractTextWatch(){
             override fun afterTextChanged(s: Editable?) {
-                val input = s.toString()
+                val input = getAnswer(s)
                 when (input) {
                     us[6] -> toast("答对了")
                 }
@@ -75,7 +75,7 @@ class UseWordsAnswerActivityActivity : Activity() {
         })
         etAnswer7.addTextChangedListener(object : AbstractTextWatch(){
             override fun afterTextChanged(s: Editable?) {
-                val input = s.toString()
+                val input = getAnswer(s)
                 when (input) {
                     us[7] -> toast("答对了")
                 }
@@ -83,7 +83,7 @@ class UseWordsAnswerActivityActivity : Activity() {
         })
         etAnswer8.addTextChangedListener(object : AbstractTextWatch(){
             override fun afterTextChanged(s: Editable?) {
-                val input = s.toString()
+                val input = getAnswer(s)
                 when (input) {
                     us[8] -> toast("答对了")
                 }
@@ -92,13 +92,19 @@ class UseWordsAnswerActivityActivity : Activity() {
 
     }
 
+    open fun getAnswer(s: Editable?) = s.toString()
+
     private fun toast(s: String) {
         Toast.makeText(this,s,Toast.LENGTH_SHORT).show()
     }
 
-    private fun printQuestions() {
+    open fun printQuestions(){
+        printQuestions(Data.map)
+    }
+
+    fun printQuestions(map:Map<String,String>) {
         var i = 0
-        Data.map.forEach { t, u ->
+        map.forEach { t, u ->
             when(i){
                 0->tvQuestion0.text = t
                 1->tvQuestion1.text = t

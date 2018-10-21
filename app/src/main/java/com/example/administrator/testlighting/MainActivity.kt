@@ -16,9 +16,9 @@ class MainActivity : Activity() {
 
     private fun setViewsListener() {
         btnPrintAll.setOnClickListener{startActivity(Intent(this,PrintAllActivity::class.java))}
-        btnPrintQuestion.setOnClickListener{}
-        btnUseWordsAnswerQuestion.setOnClickListener{}
-        btnUseNumberAnswerQuestion.setOnClickListener{}
-        btnTest.setOnClickListener{}
+        btnPrintQuestion.setOnClickListener{startActivity(Intent(this,PrintQuestionActivity::class.java))}
+        btnUseWordsAnswerQuestion.setOnClickListener{startActivity(Intent(this,UseWordsAnswerActivityActivity::class.java))}
+        btnUseNumberAnswerQuestion.setOnClickListener{startActivity(Intent(this,UseNumberAnswerQuestionActivity::class.java))}
+        btnTest.setOnClickListener{startActivity(Intent(this,TestActivity::class.java))}
     }
 }

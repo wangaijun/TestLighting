@@ -22,6 +22,10 @@
         </activity>
         <activity android:name=".UseWordsAnswerActivityActivity">
         </activity>
+        <activity android:name=".UseNumberAnswerQuestionActivity">
+        </activity>
+        <activity android:name=".TestActivity">
+        </activity>
     </application>
 
 </manifest>
