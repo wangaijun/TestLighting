@@ -3,6 +3,7 @@ package com.example.administrator.testlighting
 import android.app.Activity
 import android.os.Bundle
 import android.text.Editable
+import android.text.InputType
 import android.view.Gravity
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_use_words_answer_activity.*
@@ -11,13 +12,15 @@ open class UseWordsAnswerActivityActivity : Activity() {
     val us = mutableListOf<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_use_words_answer_activity)
+        setContentView(getLayoutId())
 
         printQuestions()
-        checkRight()
+        addViewsListener()
     }
 
-    private fun checkRight() {
+    open fun getLayoutId() = R.layout.activity_use_words_answer_activity
+
+    private fun addViewsListener() {
         etAnswer0.addTextChangedListener(object : AbstractTextWatch(){
             override fun afterTextChanged(s: Editable?) {
                 val input = getAnswer(s)

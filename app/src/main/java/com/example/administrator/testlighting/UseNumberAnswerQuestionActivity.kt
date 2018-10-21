@@ -9,4 +9,8 @@ open class UseNumberAnswerQuestionActivity : UseWordsAnswerActivityActivity() {
         val answer = super.getAnswer(s)
         return Data.map2[answer]?:""
     }
+
+    override fun getLayoutId(): Int {
+        return R.layout.activity_use_number_answer_activity
+    }
 }
