@@ -1,6 +1,7 @@
 package com.example.administrator.testlighting
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -14,7 +15,7 @@ class MainActivity : Activity() {
     }
 
     private fun setViewsListener() {
-        btnPrintAll.setOnClickListener{}
+        btnPrintAll.setOnClickListener{startActivity(Intent(this,PrintAllActivity::class.java))}
         btnPrintQuestion.setOnClickListener{}
         btnUseWordsAnswerQuestion.setOnClickListener{}
         btnUseNumberAnswerQuestion.setOnClickListener{}
