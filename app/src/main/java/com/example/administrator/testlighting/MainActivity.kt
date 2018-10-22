@@ -20,5 +20,6 @@ class MainActivity : Activity() {
         btnUseWordsAnswerQuestion.setOnClickListener{startActivity(Intent(this,UseWordsAnswerActivityActivity::class.java))}
         btnUseNumberAnswerQuestion.setOnClickListener{startActivity(Intent(this,UseNumberAnswerQuestionActivity::class.java))}
         btnTest.setOnClickListener{startActivity(Intent(this,TestActivity::class.java))}
+        btnAudioTest.setOnClickListener { startActivity(Intent(this,AudioTestActivity::class.java)) }
     }
 }

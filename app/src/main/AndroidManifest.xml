@@ -26,6 +26,8 @@
         </activity>
         <activity android:name=".TestActivity">
         </activity>
+        <activity android:name=".AudioTestActivity">
+        </activity>
     </application>
 
 </manifest>
