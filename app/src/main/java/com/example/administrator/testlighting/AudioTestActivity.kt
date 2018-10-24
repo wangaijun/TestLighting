@@ -27,12 +27,12 @@ class AudioTestActivity : Activity() {
         setContentView(R.layout.activity_audio_test)
 
         btnAllAudio.setOnClickListener {
-            showProgress()
+            showProgress("全部灯光")
             playAllMp3()
         }
 
         btnAudioTest.setOnClickListener {
-            showProgress()
+            showProgress("灯光测试")
             playOneGroupMp3()
         }
     }
@@ -77,11 +77,14 @@ class AudioTestActivity : Activity() {
     }
 
     private var progressDialog: ProgressDialog? = null
-    fun showProgress() {
-        if (progressDialog==null) progressDialog = ProgressDialog(this)
+    private fun showProgress(title: String?=null) {
+        if (progressDialog==null) {
+            progressDialog = ProgressDialog(this)
+            title?.let { progressDialog?.setTitle(title) }
+        }
         progressDialog?.show()
     }
-    fun closeProgress(){
+    private fun closeProgress(){
         progressDialog?.dismiss()
     }
 }
