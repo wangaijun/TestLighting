@@ -1,8 +1,10 @@
 package com.example.administrator.testlighting
 
 import android.app.Activity
+import android.app.ProgressDialog
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.os.Handler
 import kotlinx.android.synthetic.main.activity_audio_test.*
 import java.util.*
 
@@ -25,10 +27,12 @@ class AudioTestActivity : Activity() {
         setContentView(R.layout.activity_audio_test)
 
         btnAllAudio.setOnClickListener {
+            showProgress()
             playAllMp3()
         }
 
         btnAudioTest.setOnClickListener {
+            showProgress()
             playOneGroupMp3()
         }
     }
@@ -55,6 +59,7 @@ class AudioTestActivity : Activity() {
         }.start()
     }
 
+    val handler = Handler()
     private fun playMp3(id: Int, arr: List<Int>) {
         val mp = MediaPlayer.create(this@AudioTestActivity, id)
         mp.start()
@@ -65,6 +70,18 @@ class AudioTestActivity : Activity() {
             if (index<arr.size-1){
                 playMp3(arr[index+1],arr)
             }
+            else{
+                handler.post { closeProgress() }
+            }
         }
+    }
+
+    private var progressDialog: ProgressDialog? = null
+    fun showProgress() {
+        if (progressDialog==null) progressDialog = ProgressDialog(this)
+        progressDialog?.show()
+    }
+    fun closeProgress(){
+        progressDialog?.dismiss()
     }
 }
