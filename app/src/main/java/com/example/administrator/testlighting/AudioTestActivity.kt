@@ -59,6 +59,7 @@ class AudioTestActivity : Activity() {
         val mp = MediaPlayer.create(this@AudioTestActivity, id)
         mp.start()
         mp.setOnCompletionListener {
+            it.release()
             Thread.sleep(5000)
             val index = arr.indexOf(id)
             if (index<arr.size-1){
